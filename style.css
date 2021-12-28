@@ -1,0 +1,406 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.light {
+  --mainColor: #64bcf4;
+  --hoverColor: #5bacdf;
+  --backgroundColor: #f1f8fc;
+  --darOne: #312f3a;
+  --darkTwo: #45424b;
+  --lightOne: #919191;
+  --lightTwo: #aaa;
+}
+
+.dark {
+  --mainColor: #64bcf4;
+  --hoverColor: #5bacdf;
+  --backgroundColor: #192e3a;
+  --darOne: #f3f3f3;
+  --darkTwo: #fff;
+  --lightOne: #ccc;
+  --lightTwo: #e7e3e3;
+}
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.bigWrapper {
+  position: relative;
+  padding: 1.7rem 0 3rem;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--backgroundColor);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  position: relative;
+  max-width: 81rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 3rem;
+  z-index: 10;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between; /* Alinha os ítens no EIXO X que são Display FLEX */
+  align-items: center; /* Alinha os ítens no EIXO Y que são Display FLEX */
+  z-index: 85;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 0.6rem;
+}
+
+.logo img {
+  width: 40px;
+  margin-top: -0.6rem;
+}
+
+.logo h3 {
+  color: var(--darkTwo);
+  font-size: 1.55rem;
+  line-height: 1.2;
+}
+
+.links ul {
+  list-style: none;
+  display: flex; /* Por padrão, deixa em "flex direction:row" */
+  align-items: center;
+}
+
+.links a {
+  color: var(--lightTwo);
+  display: inline-block; /* Para garantir que não ficará inline, pois inline pode zoar com patterns, margens, paddings, etc. */
+  text-decoration: none;
+  margin-left: 4.5rem;
+  transform: 0.3s;
+}
+
+.links a:hover {
+  color: var(--hoverColor);
+  transform: scale(1.05);
+}
+
+.button {
+  padding: 0.9rem 1.9rem;
+  color: #fff !important; /*"!important" deu prioridade a esse atributo e subscreveu a cor da fonte "--lightTwo" declarada anteriormente */
+  background-color: var(--mainColor);
+  border-radius: 16px;
+  text-transform: capitalize;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background-color: var(--hoverColor);
+  transform: scale(1) !important;
+}
+
+.showCaseArea .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.bigTitle {
+  font-size: 1.4rem;
+  color: var(--darOne);
+  text-transform: capitalize;
+  line-height: 1.4;
+}
+
+.text {
+  color: var(--lightOne);
+  font-size: 1.1rem;
+  margin: 1.9rem 0 2.5rem;
+  max-width: 600px;
+  line-height: 2.3;
+}
+
+.showCaseArea .button {
+  box-shadow: 0 0 40px 2px rgba(0, 0, 0, 0.08); /*box-shadow: eixo-x eixo-y blur shadow-spread(raio de atuação da sombra) */
+}
+
+.person {
+  width: 123%;
+  transform: translate(15%, 25px);
+}
+
+.toggleModes {
+  display: inline-block;
+  border: 0;
+  margin-top: 2rem;
+  background-color: var(--darOne);
+  color: var(--backgroundColor);
+  outline: none;
+  cursor: pointer;
+  height: 39px;
+  width: 39px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.toggleModes:hover {
+  background-color: var(--darkTwo);
+  color: var(--backgroundColor);
+}
+
+.light .toggleModes i:first-child {
+  display: block;
+}
+
+.light .toggleModes i:last-child {
+  display: none;
+}
+
+.dark .toggleModes i:first-child {
+  display: none;
+}
+
+.dark .toggleModes i:last-child {
+  display: block;
+}
+
+.shape {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.1;
+  width: 500px;
+  bottom: -180px;
+  left: -15px;
+}
+
+.copy {
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation: appear 0.8s both;
+  z-index: 100;
+}
+
+@keyframes appear {
+  0% {
+    clip-path: circle(30% at -25% -25%);
+  }
+  100% {
+    clip-path: circle(150% at 0 0);
+  }
+}
+
+.stopScrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.overlay {
+  display: none;
+}
+
+.hamburgerMenu {
+  display: none;
+}
+
+@media screen and (max-width: 870px) {
+  .container {
+    padding: 0 2.25rem;
+  }
+
+  .links {
+    position: fixed;
+    z-index: 95;
+    top: 0;
+    right: 0;
+    max-width: 470px;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--mainColor);
+    transform: translateX(100%);
+    transition: 0.5s;
+  }
+
+  .links ul {
+    flex-direction: column;
+  }
+
+  .links a {
+    color: var(--backgroundColor);
+    margin-left: 0;
+    padding: 2rem 0;
+    font-size: 1.6rem;
+  }
+
+  .bigWrapper.menuActive .links {
+    transform: translateX(0%);
+    box-shadow: 0 0 50px 2px rgba(0, 0, 0, 0.4);
+  }
+
+  .overlay {
+    display: block;
+    position: fixed;
+    z-index: 90;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.2s;
+  }
+
+  .bigWrapper.menuActive .overlay {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .hamburgerMenu {
+    position: relative;
+    z-index: 99;
+    display: flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-items: center;
+    cursor: pointer;
+  }
+
+  .hamburgerMenu .bar {
+    position: relative;
+    width: 100%;
+    height: 3px;
+            background-color: var(--darkTwo);
+    border-radius: 3px;
+    transition: 0.2s;
+  }
+
+  .bar::before,
+  .bar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--darkTwo);
+    border-radius: 3px;
+    transition: 0.5s;
+  }
+
+  .bar::before {
+    transform: translateY(-8px);
+  }
+
+  .bar::after {
+    transform: translateY(8px);
+  }
+
+  .bigWrapper.menuActive .hamburgerMenu .bar {
+    background-color: transparent;
+  }
+
+  .bigWrapper.menuActive .hamburgerMenu .bar::before {
+    transform: translateX(0) rotate(-45deg);
+  }
+
+  .bigWrapper.menuActive .hamburgerMenu .bar::after {
+    transform: translateX(0) rotate(45deg);
+  }
+
+  .showCaseArea {
+    padding: 2rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .showCaseArea .container {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    gap: 3rem;
+  }
+
+  .bigTitle {
+    font-size: 1.3rem;
+  }
+
+  .text {
+    font-size: 1.02rem;
+    margin: 1.5rem 0 2.1rem;
+  }
+
+  .logo h3 {
+    font-size: 1.45rem;
+  }
+
+  .person {
+    width: 100%;
+    transform: none;
+  }
+
+  .shape {
+    bottom: -180px;
+    left: -150px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
+  .links a {
+    font-size: 1.2rem;
+  }
+
+  .bigTitle {
+    font-size: 1.1rem;
+  }
+
+  .text {
+    font-size: 0.9rem;
+    margin: 1rem 0 1.4rem;
+  }
+
+  .logo h3 {
+    font-size: 1.3rem;
+  }
+
+  .showCaseArea .button {
+    font-size: 0.9rem;
+  }
+
+  .person {
+    width: 100%;
+    transform: none;
+  }
+
+  .shape {
+    bottom: -180px;
+    left: -270px;
+  }
+}
