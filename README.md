@@ -1,4 +1,3 @@
-https://allrez44.github.io/project-danvo/
 <h2> Danvo Project </h2>
 <h4> Simple landing page project of a fictional company. </h4>
 <p> Key Features - <b> Responsiveness, Hamburguer Menu, Smooth animations & Dark Mode </b></p>
