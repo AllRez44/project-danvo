@@ -21,4 +21,3 @@
 <hr>
 
 <h3> Credits: <a href="https://github.com/sefyudem/Responsive-Landing-Page"> True Coder</a> - <a href="https://www.youtube.com/watch?v=RaITAxEdTDY&ab_channel=TrueCoder">Video</a></h3>
-<h3>  
